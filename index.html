@@ -115,7 +115,7 @@ table.matrix thead th:first-child .matrix-head-sub{color:#c6d9e8}
 .mobile-nav-wrap{display:none}
 .smallprint{font-size:10px;color:#8193a2;line-height:1.6;margin:14px 0 0}
 @media(max-width:1120px){:root{--navwidth:225px}.shell{gap:17px}.card-grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}.architecture{grid-template-columns:repeat(2,minmax(0,1fr))}.pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}.pipeline-item:nth-child(2):after{display:none}}
-@media(max-width:760px){.topbar{padding:10px 12px;gap:8px}.brand-mark{width:36px;height:36px;border-radius:10px}.brand-title{font-size:12px}.brand-subtitle{font-size:9px}.language-control{gap:2px}.lang-btn{padding:7px 8px;font-size:11px}.shell{display:flex;flex-direction:column;padding:12px 12px 30px;gap:12px}.sidebar{position:static;max-height:none;overflow:visible;padding:10px;border-radius:14px}.side-eyebrow,.side-progress{display:none}.nav-list{display:flex;flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:2px;scrollbar-width:thin}.nav-item{display:flex;flex:0 0 auto;gap:6px;width:auto;padding:7px 9px}.nav-num{width:25px;height:25px;border-radius:7px}.nav-label{white-space:nowrap;font-size:11px}.page-top{border-radius:18px;padding:22px 20px}.page-meta{gap:6px}.meta-pill{font-size:10px}.content{padding-top:13px;gap:13px}.card-grid,.card-grid.cols-2,.card-grid.cols-4,.stat-grid,.architecture{grid-template-columns:1fr}.stat-card{padding:15px}.stat-number{font-size:32px}.matrix-notes{grid-template-columns:1fr}.sim-controls{grid-template-columns:1fr}.simulator{padding:16px}.sim-top{flex-direction:column}.pipeline{grid-template-columns:1fr}.pipeline-item:not(:last-child):after{content:"↓";display:grid;top:auto;bottom:-20px;right:calc(50% - 10px);background:var(--paper);height:22px}.pipeline-item:nth-child(2):after{display:grid}.step{grid-template-columns:37px minmax(0,1fr);gap:11px;padding:14px}.step-number{width:35px;height:35px;border-radius:10px}.disclosure-grid{grid-template-columns:1fr}.page-footer{align-items:flex-start;flex-direction:column}.footer-note{max-width:none}.page-actions{width:100%;justify-content:space-between}.page-btn{padding:10px 11px}.page-index{flex:1}.ref-item{padding:11px}.block-heading{font-size:16px}}
+@media(max-width:760px){.topbar{padding:10px 12px;gap:8px}.brand-mark{width:36px;height:36px;border-radius:10px}.brand-title{font-size:12px}.brand-subtitle{font-size:9px}.language-control{gap:2px}.lang-btn{padding:7px 8px;font-size:11px}.shell{display:flex;flex-direction:column;padding:12px 12px 30px;gap:12px}.sidebar{position:static;align-self:stretch;width:100%;min-width:0;max-height:none;overflow:visible;padding:10px;border-radius:14px}.side-eyebrow,.side-progress{display:none}.nav-list{display:flex;flex-direction:row;min-width:0;max-width:100%;overflow-x:auto;gap:6px;padding-bottom:2px;scrollbar-width:thin}.nav-item{display:flex;flex:0 0 auto;gap:6px;width:auto;padding:7px 9px}.nav-num{width:25px;height:25px;border-radius:7px}.nav-label{white-space:nowrap;font-size:11px}.page-top{border-radius:18px;padding:22px 20px}.page-meta{gap:6px}.meta-pill{font-size:10px}.content{padding-top:13px;gap:13px}.card-grid,.card-grid.cols-2,.card-grid.cols-4,.stat-grid,.architecture{grid-template-columns:1fr}.stat-card{padding:15px}.stat-number{font-size:32px}.matrix-notes{grid-template-columns:1fr}.sim-controls{grid-template-columns:1fr}.simulator{padding:16px}.sim-top{flex-direction:column}.pipeline{grid-template-columns:1fr}.pipeline-item:not(:last-child):after{content:"↓";display:grid;top:auto;bottom:-20px;right:calc(50% - 10px);background:var(--paper);height:22px}.pipeline-item:nth-child(2):after{display:grid}.step{grid-template-columns:37px minmax(0,1fr);gap:11px;padding:14px}.step-number{width:35px;height:35px;border-radius:10px}.disclosure-grid{grid-template-columns:1fr}.page-footer{align-items:flex-start;flex-direction:column}.footer-note{max-width:none}.page-actions{width:100%;justify-content:space-between}.page-btn{padding:10px 11px}.page-index{flex:1}.ref-item{padding:11px}.block-heading{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 @media print{.topbar,.sidebar,.page-footer{display:none!important}.shell{display:block;padding:0;max-width:none}.page-top{color:#000;background:#fff;border:1px solid #ccc;box-shadow:none}.page-intro,.page-meta{color:#333}.content{display:block}.block{margin-bottom:14px;break-inside:avoid}.info-card,.callout,.step,.stat-card,.arch-card{box-shadow:none;break-inside:avoid}}
 </style>
@@ -131,7 +131,8 @@ table.matrix thead th:first-child .matrix-head-sub{color:#c6d9e8}
   </div>
   <div class="language-control" role="group" aria-label="Language selector">
     <button class="lang-btn" type="button" data-lang="en" aria-pressed="true">EN</button>
-    <button class="lang-btn" type="button" data-lang="zh" aria-pressed="false">中文</button>
+    <button class="lang-btn" type="button" data-lang="zh" aria-label="Simplified Chinese" aria-pressed="false">简中</button>
+    <button class="lang-btn" type="button" data-lang="zhTW" aria-label="Traditional Chinese (Taiwan)" aria-pressed="false">繁中</button>
     <button class="lang-btn" type="button" data-lang="ja" aria-pressed="false">日本語</button>
   </div>
 </header>
@@ -279,6 +280,57 @@ const T = {
    ]}
   ]
  },
+ zhTW: {
+  brandSubtitle:"逐章探索研究內容", authorsLabel:"作者", navEyebrow:"章節導航", progressLabel:"閱讀進度", prev:"← 上一章", next:"下一章 →", start:"開始閱讀", end:"返回概要", chapter:"章節", of:"共", doi:"開啟 DOI ↗", sourceNote:"內容依據所附 TAECT 2026 論文與海報整理，並明確區分原型運作狀況與實證驗證。", date:"TAECT 2026 · 2026年11月20–21日", paperNo:"論文編號 82", noLearnerStudy:"尚未進行學習者測試", activePrototype:"可運作原型",
+  pageNames:["研究概要","研究背景與缺口","雙維度設計","學習者狀態訊號","自適應規則","系統架構","目前進展","驗證路線圖","參考文獻與聲明"],
+  pages:[
+   {id:"overview",eyebrow:"研究概要",title:"客訴處理訓練的二維自適應 AI 角色扮演系統：依學習者狀態調整認知複雜度與對話強度",intro:"本系統旨在依據學習者的狀態調整語音式 AI 顧客角色扮演訓練，並分別調整兩個面向：任務的複雜程度，以及對話的強度。",meta:true,blocks:[
+    {type:"stats",items:[{value:"2",label:"難度維度",detail:"認知複雜度 × 對話強度"},{value:"6",label:"訓練條件",detail:"兩個維度組合成 2 × 3 條件設計"},{value:"2",label:"學習者狀態訊號",detail:"語音推導的負荷指數 + 回應表現"}]},
+    {type:"callout",variant:"dark",label:"核心觀點",title:"不要把所有困難都當成同一種困難。",text:"當學習者遇到困難時，先降低資訊處理需求，同時保持顧客對話強度不變。如果困難仍然存在，再降低對話強度。這是本研究提出的逐步調整方案，目前尚未被驗證為有效的學習干預。"},
+    {type:"cards",heading:"本研究的主要貢獻",cols:3,items:[{kicker:"01 · 設計",title:"兩個獨立的調整維度",text:"將任務的複雜程度與情感、人際互動的強度分別呈現，避免將兩者合併為單一的難度設定。"},{kicker:"02 · 狀態評估",title:"在不中斷練習的情況下進行評估",text:"結合語音的時序與猶豫特徵，以及大型語言模型（LLM）對可觀察到的回應行為的評估，確定下一階段的訓練條件。"},{kicker:"03 · 學習",title:"自適應練習循環",text:"每次回應後，系統都會進行評估、調整與再評估，並在練習結束時生成回饋報告。"}]},
+    {type:"callout",variant:"gold",label:"如何解讀研究結果",title:"原型能夠運作，與其有效性獲得驗證，是兩個不同層面的問題。",text:"研究團隊內部的試用已確認語音對話循環能夠正常運作。針對學習者的測試、兩項評估要素的效度驗證，以及與固定難度訓練的比較，將於後續研究中進行。"}
+   ]},
+   {id:"background",eyebrow:"01 · 研究動機",title:"客訴處理的挑戰，遠不止應對憤怒的顧客",intro:"客訴處理的難度來自多個方面：工作人員有時會因需要處理的資訊過多而應接不暇，有時會因顧客帶有攻擊性的言語而畏縮，兩種情況也會同時出現。",blocks:[
+    {type:"cards",heading:"研究背景與研究缺口",cols:3,items:[{kicker:"工作情境挑戰",title:"情緒要求較高的互動",text:"公共服務人員可能面對顧客不滿、強烈要求與言語攻擊。研究指出，顧客攻擊與不禮貌行為和服務人員的壓力及情緒耗竭有關（Grandey et al., 2004；Szczygiel & Bazińska, 2021）。"},{kicker:"訓練挑戰",title:"訓練難以重復和還原",text:"衝突降溫訓練可能提升模擬情境中的信心與表現，但能否應用於實務仍有待確認。傳統小組角色扮演可能耗時、成本高且不易重現；同儕角色扮演也可能缺乏真實感（Price et al., 2015；Power et al., 2023；Tang et al., 2026）。"},{kicker:"既有 AI 研究",title:"自適應訓練還需要另一維度",text:"Adaptive-VP 會根據受訓者的對話調整虛擬患者的溝通方式與客訴強度（Lee et al., 2025）。此外，客服聊天研究發現，回應時間同時與情緒負荷和認知負荷有關（Rafaeli et al., 2019）。"}]},
+    {type:"callout",variant:"teal",label:"研究缺口",title:"學習者遇到的困難，來自哪一方面？",text:"學習者陷入困境的原因難以直接觀察。用單一設定表示難度時，就難以區分究竟是資訊量過大，還是對話帶來的威懾感過強。每次都詢問學習者主觀感受到的負擔，也會帶來中斷練習的風險。"},
+    {type:"callout",label:"研究目標",title:"在語音對話中即時估計學習者狀態，並獨立調整兩個維度。",text:"原型結合基於語音的負荷估計與基於 LLM 的回應表現評估，每次只調整一個維度，以探索哪一類困難更可能影響目前表現。"}
+   ]},
+   {id:"design",eyebrow:"02 · 訓練設計",title:"兩個維度組合成六種訓練條件",intro:"設計將任務複雜度與對話強度交叉組合。兩個維度有各自的操作性定義，因此可以在保持另一個維度不變時單獨調整。",blocks:[
+    {type:"matrix",heading:"2 × 3 訓練條件矩陣",axisLabel:"認知複雜度 ↓ / 對話強度 →",columns:[{title:"L1 · 擔憂",subtitle:"不滿／擔憂"},{title:"L2 · 強烈要求",subtitle:"強烈不滿／強烈要求"},{title:"L3 · 言語攻擊",subtitle:"言語攻擊／威嚇"}],rows:[{label:"低複雜度",sub:"單一訴求；簡短話語",cells:[{code:"L1-Low",title:"簡單任務 + 擔憂",text:"圍繞一個問題展開簡短對話。",level:1},{code:"L2-Low",title:"簡單任務 + 強烈要求",text:"一個問題，但壓力更強。",level:2},{code:"L3-Low",title:"簡單任務 + 攻擊性對話",text:"一個問題，對話強度高。",level:3}]},{label:"高複雜度",sub:"多項訴求；話題切換；資訊整合",cells:[{code:"L1-High",title:"複雜任務 + 擔憂",text:"需要組織多個問題。",level:1},{code:"L2-High",title:"複雜任務 + 強烈要求",text:"多項問題伴隨強烈壓力。",level:2},{code:"L3-High",title:"複雜任務 + 攻擊性對話",text:"在威嚇情境下處理多個問題。",level:3}]}],notes:[{badge:"A",title:"認知複雜度",text:"低：單一訴求、簡短話語。高：多項訴求、話題切換和資訊整合。該操作化定義參考任務複雜度研究（Chen et al., 2023）。"},{badge:"B",title:"對話強度",text:"L1：不滿／擔憂。L2：強烈不滿／強烈要求。L3：言語攻擊／威嚇，參考顧客攻擊行為相關研究。"}],footnote:"這些標籤代表預設的訓練條件，不是學習者得分，也不是實證結果類別。"},
+    {type:"callout",variant:"gold",label:"關鍵設計",title:"每次只降低一個維度。",text:"如果高負荷同時伴隨較差的回應表現，首先降低認知複雜度，同時保持目前對話強度。這樣可以保留目標對話強度的練習，同時減少部分資訊處理需求。"}
+   ]},
+   {id:"assessment",eyebrow:"03 · 學習者狀態評估",title:"透過兩個訊號估計學習者的狀態",intro:"系統將語音特徵轉換為操作性負荷指數，並利用 LLM 的評分規準評估可觀察到的客訴應對行為。任何一個訊號都不應被視為對認知狀態的直接、真實測量。",blocks:[
+    {type:"steps",heading:"評估流程",items:[{num:"01",label:"基線",title:"建立個體參考值",text:"每次訓練開始時，學習者會先在最低需求條件 L1-Low 下進行初始交流，以建立回應延遲、靜默、停頓與填充詞的個體參考值。"},{num:"02",label:"語音推導的負荷指數",title:"追蹤相對基線的變化",text:"語音活動偵測與語音識別用於提取回應延遲、靜默、停頓和填充詞。隨後將這些特徵組合，並按學習者自身基線標準化，以部分考慮個體說話風格的差異。該指數是用於調整訓練的操作性訊號，並非認知負荷的直接測量。"},{num:"03",label:"回應表現",title:"利用 LLM 評估可觀察到的行為",text:"採用參考衝突降溫研究制定的分級評分標準，評估多種可觀察到的客訴應對行為。論文以回應顧客情緒、傾聽與概括為例；後續計畫由具備相關訓練經驗的指導者確認評分標準的內容效度。"}]},
+    {type:"cards",heading:"為什麼要結合兩種訊號？",cols:2,items:[{kicker:"訊號 A",title:"語音推導的負荷指數",text:"衡量相對於個人基線的時序與猶豫變化。既有研究報告了認知負荷與回應延遲、語音停頓、靜默和填充詞之間的關聯（Meister et al., 2018；Khawaja et al., 2008；Betz et al., 2023）。",tag:"間接／操作性指標"},{kicker:"訊號 B",title:"LLM 回應表現評分",text:"檢查學習者實際做出的回應行為是否仍然適當。僅有較高的負荷指數，並不自動意味著學習者表現不佳；表現評分有助於解釋該訊號。",tag:"基於評分規準的評估"}]},
+    {type:"callout",variant:"teal",label:"仍需驗證",title:"兩個元件都需要外部效標比較。",text:"計劃將每次訓練的負荷指數彙整值與課後主觀工作負荷量表（例如 NASA-TLX）比較，並檢查 LLM 評分與指導者評分的一致性。目前尚未報告這些驗證研究。"}
+   ]},
+   {id:"adaptation",eyebrow:"04 · 自適應控制",title:"按既定順序分階段調整",intro:"先調整任務複雜度，再調整對話強度，透過分階段調整這兩個維度，逐步辨別造成困難的原因。",blocks:[
+    {type:"cards",heading:"論文描述的規則",cols:3,items:[{kicker:"維持",title:"負荷高，但表現適當",text:"如果負荷指數上升而回應表現仍然適當，則保持目前條件。不能僅因為負荷較高就自動降低難度。",tag:"保持條件",tone:"tone-teal"},{kicker:"降低 · 第一步",title:"高負荷 + 回應表現下降",text:"保持對話強度，將認知複雜度從高水準降至低水準。在減輕資訊處理要求的同時，繼續以目前的對話強度進行練習。",tag:"只調整複雜度",tone:"tone-gold"},{kicker:"降低 · 第二步",title:"簡化任務後仍存在困難",text:"此時認為，對話強度較有可能是造成困難的原因，因此將其降低一個等級。這一設計旨在逐步區分影響因素，並非對學習者作出確定性診斷。",tag:"之後再調強度",tone:"tone-coral"},{kicker:"鷹架支持",title:"最低條件下仍然困難",text:"提供提示或示範回應等額外支持，而不是繼續降低已經達到最低值的維度。",tag:"添加支持",tone:"tone-navy"},{kicker:"提高難度",title:"表現穩定適當且負荷不高",text:"當回應表現持續適當且負荷指數不高時，逐步提高訓練的難度。",tag:"逐步增加挑戰",tone:"tone-teal"}]},
+    {type:"simulator",heading:"體驗決策邏輯",subheading:"調整輸入條件，查看論文規則所描述的對應操作。",tag:"互動式說明",labels:{load:"負荷指數",performance:"回應表現",after:"降低複雜度後",lowest:"對話強度是否已處於最低等級？",normal:"未升高",high:"高／上升",appropriate:"適當",lower:"低於預期",recovered:"困難有所緩解",persists:"困難仍然存在",yes:"是",no:"否",result:"可能的下一步操作",holdTitle:"保持目前條件",holdText:"儘管負荷訊號較高，表現仍然適當。規則建議保持目前訓練條件，而不是僅因負荷較高就降低難度。",advanceTitle:"逐步提高難度",advanceText:"表現適當且負荷指數不高。規則支持逐步增加訓練難度。",simplifyTitle:"首先降低認知複雜度",simplifyText:"保持對話強度不變，將任務複雜度從高調整為低，隨後重新評估學習者的回應。",intensityTitle:"將對話強度降低一個等級",intensityText:"降低複雜度後困難仍然存在。按照逐步調整的規則，下一步降低對話強度；若其已處於最低等級，則不再繼續降低。",scaffoldTitle:"增加鷹架支持",scaffoldText:"在最低對話強度下仍然存在困難。提供提示或示範回應作為額外支持。",recoverTitle:"保留簡化任務並繼續評估",recoverText:"降低任務複雜度後，學習者的表現有所改善。暫時保留較低複雜度條件，並繼續監測表現和負荷。",unspecifiedTitle:"論文未明確規定這種情形",unspecifiedText:"論文明確描述的是負荷較高且回應表現下降的情況。對於此組合，不應推斷論文未報告的自動調整；應在驗證階段審查並完善規則。",warning:"這只是用於理解規則的示例，不會運作研究原型，也不是經過驗證的學習者狀態診斷。"}},
+    {type:"callout",variant:"gold",label:"如何解讀",title:"這是自適應啟發式規則，而非直接診斷。",text:"語音特徵和評分可能存在噪聲或歧義。該步驟設計旨在讓調整更有針對性，但其可靠性與學習效果仍需檢驗。"}
+   ]},
+   {id:"prototype",eyebrow:"05 · 系統實現",title:"即時語音循環連接語音、評估與 AI 顧客",intro:"目前原型允許學習者與即時虛擬形象進行語音交流。每次學習者作答後，系統提取語音特徵、評估表現、選擇下一訓練條件，並生成 AI 顧客的下一輪話語。",blocks:[
+    {type:"architecture",heading:"功能模組",items:[{icon:"UI",title:"學習者互動介面",text:"網頁介面呈現對話對象，並接收學習者的語音回答。",chips:["訓練介面","語音互動"]},{icon:"AV",title:"對話式虛擬形象",text:"即時虛擬角色透過同步語音與動畫呈現對話對象的發言。",chips:["視覺與語音對話"]},{icon:"ASR",title:"語音特徵處理",text:"語音活動偵測與識別模組提取時間相關訊號，包括回應延遲、靜默、停頓與填充詞。",chips:["語音訊號","時間特徵"]},{icon:"CTL",title:"對話與自適應控制",text:"對話管理模組整合學習者狀態訊號，並依據調整策略選擇下一訓練條件。",chips:["條件選擇"]},{icon:"LLM",title:"語言生成與回應評估",text:"語言模型生成對話對象的發言，並依據結構化評分規準評估學習者可觀察的行為。",chips:["語言生成","規準評估"]},{icon:"↗",title:"階段性回饋",text:"訓練結束後生成總結，概括觀察到的優勢、改進方向與後續練習目標。",chips:["反思性回饋"]}]},
+    {type:"pipeline",heading:"學習者每次作答後的循環",items:[{num:"01 · 監聽",title:"採集語音",text:"學習者回應目前條件下的 AI 顧客。"},{num:"02 · 評估",title:"估計並評分",text:"提取語音特徵，並評定可觀察的回應行為。"},{num:"03 · 調整",title:"選擇下一條件",text:"根據規則維持、簡化、降低強度、提供鷹架支持或提高難度。"},{num:"04 · 回應",title:"生成下一輪話語",text:"AI 顧客按照選定的訓練條件進行回應。"}]},
+    {type:"callout",variant:"teal",label:"互動時序",title:"在虛擬形象說話期間異步評估回應。",text:"海報描述，這一設計旨在讓系統評估學習者的回應時，不必延遲 AI 顧客下一次發言。"},
+    {type:"video",heading:"觀看原型演示影片",intro:"此影片展示目前的語音互動流程，用於說明原型如何運作；它不是學習者實驗，也不代表訓練效果已得到驗證。",frameTitle:"原型演示影片",linkText:"在 YouTube 開啟影片 ↗",questionsHeading:"有任何問題嗎？",questionsText:"歡迎現場向安藤提問。透過 Slido 提交的問題將由共同第一作者加藤空（Sora Kato）回覆。",slidoText:"透過 Slido 提問 ↗"},
+   ]},
+   {id:"status",eyebrow:"06 · 目前進展",title:"研究團隊內部試用已確認整個循環能正常運作，學習者測試仍待開展",intro:"目前報告的結果是一個可運作的原型，以及其元件能在語音對話中協同工作；這並不證明自適應訓練可以改善學習效果。",blocks:[
+    {type:"cards",heading:"已經實現的部分",cols:2,items:[{kicker:"已實現",title:"語音角色扮演循環",text:"學習者與即時 AI 顧客虛擬形象進行語音交流。每次回應後，系統提取語音特徵、用 LLM 評估回應、選擇下一條件，並生成顧客的下一句回應。",tag:"可運作原型",tone:"tone-teal"},{kicker:"已實現",title:"練習結束後的回饋",text:"原型會生成報告，總結學習者表現良好的方面、需要改進的內容，以及下一次訓練目標。",tag:"回饋報告",tone:"tone-teal"},{kicker:"內部試用",title:"研究團隊內部的運作驗證",text:"透過研究團隊內部試用，確認整個循環能夠在語音對話過程中運作。",tag:"技術運作已檢查",tone:"tone-gold"},{kicker:"尚未完成",title:"針對學習者的評估",text:"尚未進行學習者測試。負荷指數與基於 LLM 的回應表現評估也尚未經過外部效度驗證。",tag:"尚無學習效果結論",tone:"tone-coral"}]},
+    {type:"callout",variant:"dark",label:"證據邊界",title:"不要把原型運作結果理解為有效性結果。",text:"目前證據支持的是：整合後的語音對話循環可以在研究團隊內部試用中工作。它尚不能證明測量有效性、客訴處理技能提升、向真實工作遷移，或學習者體驗改善。"}
+   ]},
+   {id:"validation",eyebrow:"07 · 後續工作",title:"在宣稱學習效益之前，應先完成驗證",intro:"論文提出分階段的評估路徑：首先確認兩個訊號是否具有意義，再完善調整策略，最後與固定難度訓練進行比較。",blocks:[
+    {type:"steps",heading:"擬議的驗證路線圖",items:[{num:"01",label:"聚合效度",title:"將負荷指數與主觀工作負荷比較",text:"將語音推導負荷指數的單次訓練彙整值，與 NASA-TLX 等課後問卷進行比較（Hart & Staveland, 1988）。該指數應被理解為間接指標，而不是主觀報告的替代品或認知的直接測量。"},{num:"02",label:"評分一致性",title:"比較 LLM 與指導者的評分",text:"考察具有客訴應對培訓經驗的指導者所作的評價與 LLM 依據評分標準給出的分數之間的一致性，確認評分標準的內容效度，並識別難以可靠評分的行為。"},{num:"03",label:"完善規則",title:"檢驗何時以及如何調整",text:"利用驗證結果與學習者測試來完善門檻值、逐步調整規則和支架策略。特別檢查負荷訊號與表現訊號不一致時的邊界情形。"},{num:"04",label:"對照研究",title:"比較自適應與固定難度角色扮演",text:"比較兩種方案在客訴處理技能的習得、遷移至實務現場和學習者體驗方面的差異。這些是未來擬評估的結果，並非目前研究發現。"}]},
+    {type:"cards",heading:"潛在貢獻與適用邊界",cols:2,items:[{kicker:"潛在貢獻",title:"更有針對性的練習",text:"如果得到驗證，二維模型可能針對資訊處理過載與情緒挑戰性互動採用不同調整，而不是用同一種方式降低所有難度。"},{kicker:"可能的擴展",title:"其他高難度人際溝通訓練",text:"論文提出該模型可能適用於客訴處理以外的訓練情境。但每種情境仍需單獨設計場景並驗證。"}]},
+    {type:"callout",variant:"gold",label:"目前限制",title:"目前尚無學習者測試或實證驗證。",text:"下一步研究重點是驗證兩項學習者狀態評估元件，再評估自適應規則與學習結果。在此之前，相關啓示應被視為設計依據與研究計劃。"}
+   ]},
+   {id:"references",eyebrow:"08 · 文獻與透明度",title:"參考文獻、致謝與生成式 AI 聲明",intro:"以上說明遵循所附 TAECT 2026 海報與論文中的術語和研究狀態表述。為保證引用準確性，參考文獻保留英文原文。",blocks:[
+    {type:"references",heading:"主要參考文獻",intro:"點擊 DOI 鏈接可開啟出版記錄。此處僅列出與印刷海報一致的主要文獻，並非完整參考文獻表。",items:REFERENCES},
+    {type:"disclosures",ackTitle:"致謝",ackText:"作者感謝 Morita 實驗室與 Nishimura 實驗室成員參與研究團隊內部試用。",aiTitle:"生成式 AI 使用聲明",aiText:"論文說明，Claude 與 ChatGPT 用於協助整理思路、輔助文獻檢索、組織文本、翻譯與語言潤色。研究概念與方法決策由作者制定；作者核實來源、審查解釋和最終稿，並對準確性、原創性與研究倫理負責。"},
+    {type:"callout",label:"會議資訊",title:"TAECT 2026 · 論文編號 82",text:"面向客訴處理訓練的二維自適應 AI 角色扮演系統：根據學習者狀態調整認知複雜度與對話強度。Tsugumi Ando 與 Sora Kato 為共同第一作者；Yusuke Morita 為通訊作者。"}
+   ]}
+  ]
+ },
  ja: {
   brandSubtitle:"章ごとに研究内容を詳しく見る", authorsLabel:"著者", navEyebrow:"章ナビゲーション", progressLabel:"閲覧の進捗", prev:"← 前の章", next:"次の章 →", start:"閲覧を開始", end:"概要に戻る", chapter:"章", of:"/", doi:"DOIを開く ↗", sourceNote:"添付されたTAECT 2026の論文・ポスターに基づいています。プロトタイプの動作状況と実証的な検証を区別して記載しています。", date:"TAECT 2026 · 2026年11月20–21日", paperNo:"論文番号 82", noLearnerStudy:"学習者実験は未実施", activePrototype:"動作するプロトタイプ",
   pageNames:["研究概要","背景と研究ギャップ","2次元の設計","学習者状態の推定","適応ルール","システム構成","現在の進捗","今後の検証","参考文献・開示"],
@@ -347,7 +399,7 @@ function renderMeta(page,t){
  const meta=$("#pageMeta");meta.innerHTML="";
  if(page.meta){
   const authors=make("span","meta-pill");authors.innerHTML='<strong>'+escapeHTML(t.authorsLabel)+'</strong> '+escapeHTML("Tsugumi Ando¹⁺ · Sora Kato¹⁺ · Shoji Nishimura² · Yusuke Morita²*");meta.append(authors);
-  const co=make("span","meta-pill",currentLang==="ja"?"Ando・Kato：共同筆頭著者":currentLang==="zh"?"Ando、Kato：共同第一作者":"Ando & Kato: co-first authors");meta.append(co);
+  const co=make("span","meta-pill",currentLang==="ja"?"Ando・Kato：共同筆頭著者":(currentLang==="zh"||currentLang==="zhTW")?"Ando、Kato：共同第一作者":"Ando & Kato: co-first authors");meta.append(co);
  }
  const d=make("span","meta-pill",t.date);meta.append(d);
  const p=make("span","meta-pill",t.paperNo);meta.append(p);
@@ -419,15 +471,15 @@ function updateSimulator(labels){
  title.textContent=map[k][0];p.textContent=map[k][1];
 }
 function renderPage(){
- const t=T[currentLang],page=t.pages[currentIndex];document.documentElement.lang=currentLang==="zh"?"zh-CN":currentLang;
- document.title=(currentLang==="ja"?"TAECT 2026｜適応型AIロールプレイ・デジタルポスター":currentLang==="zh"?"TAECT 2026｜自适应AI角色扮演数字海报":"TAECT 2026 | Adaptive AI Role-Play Digital Poster");
+ const t=T[currentLang],page=t.pages[currentIndex];document.documentElement.lang=currentLang==="zh"?"zh-CN":currentLang==="zhTW"?"zh-TW":currentLang;
+ document.title=(currentLang==="ja"?"TAECT 2026｜適応型AIロールプレイ・デジタルポスター":currentLang==="zh"?"TAECT 2026｜自适应AI角色扮演数字海报":currentLang==="zhTW"?"TAECT 2026｜自適應 AI 角色扮演數位海報":"TAECT 2026 | Adaptive AI Role-Play Digital Poster");
  $("#brandSubtitle").textContent=t.brandSubtitle;$("#navEyebrow").textContent=t.navEyebrow;$("#progressLabel").textContent=t.progressLabel;$("#footerNote").textContent=t.sourceNote;
  $("#pageEyebrow").textContent=page.eyebrow;$("#pageTitle").textContent=page.title;$("#pageIntro").textContent=page.intro;renderMeta(page,t);
  const content=$("#pageContent");content.innerHTML="";
  if(page.meta){
   const panel=make("section","block meta-panel");
-  if(currentLang!=="en") panel.append(make("div","original-title",(currentLang==="ja"?"英語原題：":"英文原题：")+" A Two-Dimensional Adaptive AI Role-Play System for Complaint-Handling Training: Adjusting Cognitive Complexity and Interaction Intensity Based on Learner State"));
-  const affiliations=currentLang==="ja"?"¹ 早稲田大学大学院 人間科学研究科 · ² 早稲田大学 人間科学学術院 · ¹⁺ Ando・Kato：共同筆頭著者 · * 責任著者：Yusuke Morita":currentLang==="zh"?"¹ 早稻田大学人类科学研究科 · ² 早稻田大学人类科学学部（Faculty of Human Sciences） · ¹⁺ Ando、Kato：共同第一作者 · * 通讯作者：Yusuke Morita":"¹ Graduate School of Human Sciences, Waseda University, Japan · ² Faculty of Human Sciences, Waseda University, Japan · ¹⁺ Co-first authors · * Corresponding author: Yusuke Morita";
+  if(currentLang!=="en") panel.append(make("div","original-title",(currentLang==="ja"?"英語原題：":currentLang==="zhTW"?"英文原題：":"英文原题：")+" A Two-Dimensional Adaptive AI Role-Play System for Complaint-Handling Training: Adjusting Cognitive Complexity and Interaction Intensity Based on Learner State"));
+  const affiliations=currentLang==="ja"?"¹ 早稲田大学大学院 人間科学研究科 · ² 早稲田大学 人間科学学術院 · ¹⁺ Ando・Kato：共同筆頭著者 · * 責任著者：Yusuke Morita":(currentLang==="zh"||currentLang==="zhTW")?(currentLang==="zhTW"?"¹ 早稻田大學人類科學研究科 · ² 早稻田大學人類科學學術院（Faculty of Human Sciences） · ¹⁺ Ando、Kato：共同第一作者 · * 通訊作者：Yusuke Morita":"¹ 早稻田大学人类科学研究科 · ² 早稻田大学人类科学学部（Faculty of Human Sciences） · ¹⁺ Ando、Kato：共同第一作者 · * 通讯作者：Yusuke Morita"):"¹ Graduate School of Human Sciences, Waseda University, Japan · ² Faculty of Human Sciences, Waseda University, Japan · ¹⁺ Co-first authors · * Corresponding author: Yusuke Morita";
   panel.append(make("div","affiliations",affiliations));content.append(panel);
  }
  page.blocks.forEach(block=>content.append(renderBlock(block,t)));
