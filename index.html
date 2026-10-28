@@ -439,7 +439,7 @@ function renderBlock(block,t){
   if(block.heading)root.append(make("h2","block-heading",block.heading));
   if(block.intro)root.append(make("p","video-description",block.intro));
   const link=make("a","video-link",block.linkText||"Open video on YouTube ↗");
-  link.href="https://youtu.be/YzLYDAEZc1A";
+  link.href="https://www.youtube.com/watch?v=4jlH6ehG73g";
   link.target="_blank";link.rel="noopener noreferrer";
   link.setAttribute("aria-label",block.linkText||"Open video on YouTube");
   root.append(link);
